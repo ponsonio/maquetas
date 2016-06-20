@@ -1,0 +1,24 @@
+{
+  "name": "maketas",
+  "version": "0.1.1",
+  "description": "Maquetas Funcionales ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ponsonio/maquetas.git"
+  },
+  "author": "Jorge Cabrera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ponsonio/maquetas/issues"
+  },
+  "homepage": "https://github.com/ponsonio/maquetas#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
