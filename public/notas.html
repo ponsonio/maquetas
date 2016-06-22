@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="siga">
 <head>
 	<title></title>
 		<title>SIGA</title>
 	 <!-- Compiled and minified CSS -->
    <link href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="public/app.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no"/>
 	<meta charset="utf-8"/>
@@ -16,72 +16,25 @@
 <section id="header">
 
 </section>
-
-
-			<nav>
-			  <ul class="right hide-on-med-and-down">
-			    <li><a href="#!">First Sidebar Link</a></li>
-			    <li><a href="#!">Second Sidebar Link</a></li>
-			  </ul>
-			  <ul id="slide-out" class="side-nav">
-			    <li><a href="#!">First Sidebar Link</a></li>
-			    <li><a href="#!">Second Sidebar Link</a></li>
-			  </ul>
-			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-			</nav>
-
 <section id="main-container">
-	<div class="container">
-
-			<h3 class="platzigram">Notas </h3>
+	<div class="container" >
+		<div class="row s10 signup-box">
+			<h3 class="siga">Notas </h3>
 			
-        	<h5 class="platzigram">Segundo Bimestre   << >> </h5>
+        	<p>Segundo Bimestre   << >> </p>
 
-			<div class="row">
-			    <div class="divider"></div>
-					<div class="row s10	">
+					<div ng-controller="NotasController as notasCtrl">
 								<ul class="collection">
-								    <li class="collection-item avatar">
+								    <li class="collection-item avatar" ng-repeat="notas in notasCtrl.notasBimestre">
 								      <i class="material-icons circle">folder</i>
-								      <span class="title">Historia</span>
-								      <p> TA1 11, MENSUAL 12.3, BIM 23.5 
+								      <span class="title">{{notas.nombreCurso}}</span>
+								      <p> Promedio Final : {{notas.notaFinal}}</p>
+								      <p>
+								      	  Evaluaciones : 
+								      	<span ng-repeat="evaluacion in notas.notas" > 
+								      		{{evaluacion}}
+								      	</span>
 								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
-								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-								    </li>
-								    <li class="collection-item avatar">
-								      <i class="material-icons circle green">insert_chart</i>
-								      <span class="title">Matemática</span>
-								      <p>TA1 11, MENSUAL 12.3, BIM 23.5  								      </p>
 								      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
 								    </li>
 								 </ul>
@@ -94,7 +47,7 @@
  <footer class="site-footer">
     <div class="container">
       <div class="row">
-        <div class="col s10  center-align">
+        <div class="col s12  center-align">
         <div class="divider"></div>
           Sergio Bernales 215
           Miraflores - Perú
@@ -105,17 +58,11 @@
     </div>
   </footer>
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js"></script>
 
-
-
-  <script type="text/javascript">
-  // Initialize collapse button
-  $(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
-	</script>
-</body>
+  </body>
 </html>

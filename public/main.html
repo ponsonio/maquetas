@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="siga">
 <head>
 	<title></title>
 		<title>SIGA</title>
 	 <!-- Compiled and minified CSS -->
    <link href='https://fonts.googleapis.com/css?family=Montserrat|Oleo+Script' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="public/app.css">
+  <link rel="stylesheet" type="text/css" href="app.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 , user-scalable=no"/>
 	<meta charset="utf-8"/>
@@ -16,61 +16,40 @@
 <section id="header">
 
 </section>
-
-
-			<nav>
-			  <ul class="right hide-on-med-and-down">
-			    <li><a href="#!">Notas</a></li>
-			    <li><a href="#!">Mensajes</a></li>
-			  </ul>
-			  <ul id="slide-out" class="side-nav">
-			    <li><a href="#!">Notas</a></li>
-			    <li><a href="#!">Second Sidebar Link</a></li>
-			  </ul>
-			  <a href="#" data-activates="slide-out" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-			</nav>
-
-			<script type="text/javascript">
-				console.log('1');
-				$(".button-collapse").sideNav();				
-			</script>
 <section id="main-container">
 	<div class="container">
-			
-        
+			<div class="row s12" ng-controller="UsuarioController as usrCtrl">
+				<div class="col s6">
+				Alumno : {{usrCtrl.alumno.codigo}} - {{usrCtrl.alumno.nombre}} {{usrCtrl.alumno.apellpa}} {{usrCtrl.alumno.apellma}}
+				</div>
+				<div class="col s3 offset-s3">
+				Grado : {{usrCtrl.alumno.grado}} -{{usrCtrl.alumno.seccion}}
+				</div>
+        	</div>
 			<div class="row">
 			    <div class="divider"></div>
-				<div class="row s10	">
+				<div class="row s10	defaul-box">
+					<h2 class="center-align"> Avisos</h2>
 					<div class="row s10">
-						<h5 class="platzigram">Avisos</h5>
+						
+						<!-- -
 			           <div class="col m5 hide-on-small-only">
-			              <img class="bienvenida" src="public/avisos.jpg" />
+			              <img class="bienvenida" src="img/avisos.jpg" />
 			            </div>
-						<div class="col m7">				
+			            ->
+			            <!-- Avisos -->
+						<div class="col m12"  ng-controller="AvisosController as avisoController">				
 
 							  <ul class="collection">
-							    <li class="collection-item avatar">
+
+							    <li class="collection-item avatar"  ng-repeat="aviso in avisoController.avisos">
 							      <i class="material-icons circle">folder</i>
-							      <span class="title">Día de la Madre</span>
-							      <p>Blah blah blahblah<br>
+							      <span class="left-align">{{aviso.titulo}}</span>
+							      <p>{{aviso.fecha}}<br>
 								      </p>
 							      <a href="#!" class="secondary-content"><i class="material-icons">ver mas</i></a>
 							    </li>
-							    <li class="collection-item avatar">
-							      <i class="material-icons circle green">insert_chart</i>
-							      <span class="title">Visita Parqute de las Leyendas</span>
-							      <p>El día 12/23 se llevará a cabo... <br>
-							      </p>
-							      <a href="#!" class="secondary-content"><i class="material-icons">ver mas</i></a>
-							    </li>
-							    <li class="collection-item avatar">
-							      <i class="material-icons circle red">play_arrow</i>
-							      <span class="title">Title</span>
-							      <p>First Line <br>
-							         Second Line
-							      </p>
-							      <a href="#!" class="secondary-content"><i class="material-icons">ver mas</i></a>
-							    </li>
+
 							  </ul>
 						</div>
 					</div>
@@ -79,42 +58,26 @@
 
 			    <div class="divider"></div>
 				<div class="row s10	">
-					<div class="row s10">
-						<h5 class="platzigram">Tareas y Actividades</h5>
-
-						<div class="col m7">
+					<div class="row s10 signup-box">
+						<h5 class="siga">Tareas y Actividades</h5>
+						<!-- Tareas -->
+						<div class="col m12"  ng-controller="TareasController as tareasController">
 							
 							 <ul class="collection">
-							    <li class="collection-item avatar">
+							    <li class="collection-item avatar" ng-repeat="tareas in tareasController.tareas">
 							      <i class="material-icons circle">folder</i>
-							      <span class="title">Maqueta</span>
-							      <p>Historía del Perú<br>
-							         Entrega : 12/12/2016
+							      <span class="title">{{tareas.titulo}}</span>
+							      <p>{{tareas.nombre_curso}}<br>
+							         Entrega : {{tareas.fecha}}
 							      </p>
 							      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
 							    </li>
-							    <li class="collection-item avatar">
-							      <i class="material-icons circle green">insert_chart</i>
-							      <span class="title">Ejecicios Conjuntos</span>
-							      <p>Matemática<br>
-							         Entrega : 12/12/2016
-							      </p>
-							      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-							    </li>
-							    <li class="collection-item avatar">
-							      <i class="material-icons circle red">play_arrow</i>
-							      <span class="title">Gerundios</span>
-							      <p>Lenguaje<br>
-							         Entrega : 12/12/2016
-							      </p>
-							      <a href="#!" class="secondary-content"><i class="material-icons">ver más</i></a>
-							    </li>
-							  </ul>
-            
 						</div>
-			           <div class="col m5 hide-on-small-only">
-			              <img class="bienvenida" src="public/tareas.jpg" />
+						<!--<div class="col m5 hide-on-small-only">
+			              <img class="bienvenida" src="img/tareas.jpg" />
 			            </div>
+			            -->
+
 					</div>
 
 
@@ -126,7 +89,7 @@
  <footer class="site-footer">
     <div class="container">
       <div class="row">
-        <div class="col s10  center-align">
+        <div class="col s12  center-align">
         <div class="divider"></div>
           Sergio Bernales 215
           Miraflores - Perú
@@ -136,18 +99,11 @@
         </div>
     </div>
   </footer>
+    <!-- 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="js/app.js"></script>
 
-      <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    <script src="js/init.js"></script>
-
-
-  <script type="text/javascript">
-  // Initialize collapse button
-  //$(".button-collapse").sideNav();
-  // Initialize collapsible (uncomment the line below if you use the dropdown variation)
-  //$('.collapsible').collapsible();
-	</script>
 </body>
 </html>

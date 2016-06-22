@@ -31,7 +31,17 @@ body {
   text-align: center;
 }
 
-.signup-box .platzigram {
+.defaul-box {
+  background-color: white;
+  border: 1px solid #edeeee;
+  border-radius: 3px;
+  padding: 10px 0;
+  font-family: 'Oleo Script';
+}
+
+
+
+.signup-box .siga {
   font-family: 'Oleo Script';
   font-size: 42px;
 }
