@@ -1,11 +1,6 @@
 body {
   background: #fafafa;
   color: #125688;
-  font-family: Montserrat
-}
-
-#main-container {
-  margin: 30px auto;
 }
 
 .bienvenida {
@@ -39,11 +34,23 @@ body {
   font-family: 'Oleo Script';
 }
 
+.btn_small {
+  height:25px ; 
+  width:100px ;
+  font-family: 'Oleo Script';
+  font-size: 8px;
+}
 
+.siga_titulo h1{
+  font-family: 'Oleo Script';
+  font-size: 28px;
+  center-align;
+}
 
 .signup-box .siga {
   font-family: 'Oleo Script';
-  font-size: 42px;
+  font-size: 12px;
+  center-align;
 }
 
 .signup-form {
@@ -60,6 +67,7 @@ body {
   background-color: #4090db;
   font-size: .8em;
 }
+
 
 .signup-form .btn.btn-fb:hover {
   background-color: #2d6599;

@@ -15,8 +15,6 @@
 <body>
 <section id="header">
 		<nav class="indigo darken-4">
- 
- 
 		  <div class="nav-wrapper">
 		    <a href="#" class="brand-logo right">Logo</a>  
 		    <!-- These navigation links disappear if the screen gets too small. -->
@@ -38,67 +36,67 @@
 		  </div>
 		</nav>
 </section>
-
 <section id="main-container">
-	<div class="container">
-		<div class="row" ng-controller="UsuarioController as usrCtrl">
-			<div class="col">
-			<a href="#!" class="collection-item">Alumno : {{usrCtrl.alumno.codigo}} - {{usrCtrl.alumno.nombre}} {{usrCtrl.alumno.apellpa}} {{usrCtrl.alumno.apellma}}</a>
+	<div class="container" >
+			<div class="row" ng-controller="UsuarioController as usrCtrl">
+				<div class="col">
+				<a href="#!" class="collection-item">Alumno : {{usrCtrl.alumno.codigo}} - {{usrCtrl.alumno.nombre}} {{usrCtrl.alumno.apellpa}} {{usrCtrl.alumno.apellma}}</a>
+				</div>
+				<div class="col">Grado : {{usrCtrl.alumno.grado}} -{{usrCtrl.alumno.seccion}}
+				</div>
 			</div>
-			<div class="col">Grado : {{usrCtrl.alumno.grado}} -{{usrCtrl.alumno.seccion}}
-			</div>
-		</div>
 
-		<div class="row">				
-			<div class="row defaul-box siga_titulo">
-				  <h1 class="siga center-align"> Avisos</h1>
-			</div>	  
-			<div class="row defaul-box">	  						
-				  <ul class="collection" ng-controller="AvisosController as avisoController">
-				    <li class="collection-item avatar"  ng-repeat="aviso in avisoController.avisos">
-				      <i class="material-icons circle">folder</i>
-				      <span class="left-align">{{aviso.titulo}}</span> {{aviso.fecha}}
-				      <!-- <a class="waves-effect waves-light btn btn_small">Ver Más</a> -->
-				      <a href="#!" class="collection-item">Ver Más</a>
-				    </li>
-				  </ul>
+			<div class="row defaul-box siga_titulo"  ng-controller="SeccionCursoController as seccionCursoCtrl">
+				<h1 class="center-align">{{seccionCursoCtrl.seccionCurso.nombreCurso}}</h1>
 			</div>
-		</div>		
-		<div class="divider"></div>
-		
-		<div class="row">
-					<div class="row defaul-box siga_titulo">
-						<h1 class="siga center-align">Tareas y Actividades</h1>
-					</div>	  						
-			<div class="row defaul-box">	
-			<!-- Tareas -->
-				 <ul class="collection" ng-controller="TareasController as tareasController">
-				    <li class="collection-item avatar" ng-repeat="tareas in tareasController.tareas">
-				      <i class="material-icons circle">folder</i>
-				      <span class="class="left-align>{{tareas.titulo}}</span>
-				      <p>{{tareas.nombre_curso}}<br>
-				         Entrega : {{tareas.fecha}}
-				      </p>
-				      <a href="#!" class="collection-item">Ver Más</a>
-				    </li>
-				</ul>    
+			<div class="row defaul-box siga_titulo"  ng-controller="SeccionCursoController as seccionCursoCtrl">
+			      <div class="col">
+				      <ul class="collection">
+			     		  <li class="collection-item">
+			                <strong>Codigo :</strong>
+			                <span class="pull-right">{{seccionCursoCtrl.seccionCurso.codCurso}}</span>
+			              </li>
+	              		  <li class="collection-item">
+			                <strong>Nota Final :</strong>
+			                <span class="pull-right">{{seccionCursoCtrl.seccionCurso.notaFinal}}</span>
+			              </li>
+			           </ul>
+		           </div>
+		           <div class="col">
+   				      <ul class="collection" ng-controller="DocenteController as docenteCtrl">
+			     		  <li class="collection-item">
+			                <strong>Docente : </strong>
+			                <span class="pull-right">{{docenteCtrl.docente.nombre}} {{docenteCtrl.docente.apellpa}} {{docenteCtrl.docente.apellma}} </span>
+			              </li>
+	              		  <li class="collection-item">
+			                <strong>Otras Secciones :</strong>
+			                <span ng-repeat="seccion in docenteCtrl.docente.secciones" > 
+				      			{{secciones}}   
+				      		</span>
+
+			              </li>
+			           </ul>
+			        </div>	   	
 			</div>
-		</div>
+
+			<div class="row defaul-box">
+	        	<p class="center-align">Evaluaciones - XXXX   <a href="#!" class="secondary-content"> >> </a>  <a href="#!" class="secondary-content"> << </a> </p>	
+			</div>	 
 	</div>
 </section>
 
 <footer class="site-footer">
 <div class="container">
   <div class="row">
-	    <div class="divider"></div>
-	      Sergio Bernales 215
-	      Miraflores - Perú
-	      T (51) 993490440
-	      E informes@b2mind.com
-	      © 2016 B2MIND
-	    </div>
+    <div class="col center-align">
+    <div class="divider"></div>
+      Sergio Bernales 215
+      Miraflores - Perú
+      T (51) 993490440
+      E informes@b2mind.com
+      © 2016 B2MIND
+    </div>
 </div>
-</footer>
     <!-- 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     -->

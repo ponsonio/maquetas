@@ -33,6 +33,22 @@
 
   });
 
+  app.controller('DocenteController', function(){ 
+    this.docente = {
+      id: "001",
+      nombre: "Jorge",
+      apellpa: "Cabrera",
+      apellma: "Chiappe",
+      codigo : "19960200",
+      ie : "Maria Reina", 
+      grado : "3ro Sec" ,
+      secciones:  [ "Historia", "Matemática", "Filosofia" ]
+    };
+
+  });
+
+
+
 app.controller('AvisosController', function(){ 
     this.avisos = [
       
@@ -86,6 +102,21 @@ app.controller('NotasController', function(){
     ];
 
   });
+
+
+  app.controller('SeccionCursoController', function(){ 
+    this.seccionCurso =  {
+          nombreCurso:"Historia del Perú",
+          codCurso: "1223", 
+          id_curso:"1",
+          notaFinal:"15.5",
+          evaluaciones: [
+                  "Trabajo Número 1 : 11", "Examen Parcial : 14", "Trabajo Investigación : 16" 
+           ] 
+     };
+  });
+
+
 
 
 
