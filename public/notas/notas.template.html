@@ -1,0 +1,21 @@
+			<div class="row defaul-box siga_titulo">
+				<h1 class="center-align">Notas</h1>
+			</div>
+			<div class="row defaul-box">
+	        	<p class="center-align">Segundo Bimestre   <a href="#!" class="secondary-content"> >> </a>  <a href="#!" class="secondary-content"> << </a> </p>						
+				<ul class="collection" >
+				    <li class="collection-item avatar" ng-repeat="notas in  $ctrl.notasBimestre">
+				      <i class="material-icons circle">folder</i>
+				      <span class="title">{{notas.nombreCurso}}</span>
+				      <p> Promedio Final : {{notas.notaFinal}}</p>
+				      <p>
+				      	  Evaluaciones : 
+				      	<span ng-repeat="evaluacion in notas.notas" > 
+				      		{{evaluacion}} 
+				      	</span>
+				      	 <span ng-hide="$last">,</span>	
+				      </p>
+				      <a href="curso.html" class="collection-item">Ver Más</a>
+				    </li>
+				 </ul>
+			</div>	

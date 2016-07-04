@@ -1,6 +1,7 @@
 (function () {
   var app = angular.module('siga', []);
 
+
   app.controller('LoginController', function () {
     this.img = 0;
 
@@ -8,6 +9,12 @@
           this.img = 1;
       };
   });
+
+    app.
+    component('pie', {
+      // Note: The URL is relative to our `index.html` file
+      templateUrl: '../pie/pie.template.html'
+    });
 
 
   app.controller('TabsController', function () {
@@ -89,19 +96,7 @@ app.controller('TareasController', function(){
   });
 
 
-app.controller('NotasController', function(){ 
-    this.notasBimestre = [
-      
-        {
-          nombreCurso:"Historia del Perú" , id_curso:"1" ,notaFinal:"15.5", notas: [ "TA-11", "PARCIAL - 19", "TRABAJO - 18" ]  
-        },
-        {
-          nombreCurso:"Matemática" , id_curso:"2" ,notaFinal:"--", notas: [ "TA-11", "PARCIAL - 19", "TRABAJO - 18" ]  
-        }
 
-    ];
-
-  });
 
 
   app.controller('SeccionCursoController', function(){ 
