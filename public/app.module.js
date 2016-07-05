@@ -1,6 +1,9 @@
 'use strict';
 
 // Define the `phonecatApp` module
-angular.module('phonecatApp', [
-  'NotasAlumno'
+angular.module('siga', [
+  'NotasAlumno',
+  'LoginAlumno',
+  'Pie',
+  'ngRoute'
 ]);

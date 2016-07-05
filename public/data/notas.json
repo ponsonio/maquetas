@@ -1,0 +1,11 @@
+[  
+          {
+            "nombreCurso":"Historia del Perú" , "id_curso":"1" ,"notaFinal":"15.5", "notas": [ "TA-11", "PARCIAL - 19", "TRABAJO - 18" ]  
+          },
+          {
+            "nombreCurso":"Biología" , "id_curso":"11" ,"notaFinal":"11.5", "notas": [ "TA-01", "PARCIAL - 19", "TRABAJO - 10" ]  
+          },
+          {
+            "nombreCurso":"Matemática" , "id_curso":"2" ,"notaFinal":"--", "notas": [ "TA-11", "PARCIAL - 19", "TRABAJO - 18" ]  
+          }
+      ]
