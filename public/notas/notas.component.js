@@ -11,6 +11,7 @@ angular.
         $http.get('data/notas.json').then(function(response) {
           self.notasBimestre = response.data;
         });
+
       }    
 
     ]      

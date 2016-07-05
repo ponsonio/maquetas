@@ -2,4 +2,4 @@
 
 
 // Define the `phoneDetail` module
-angular.module('LoginAlumno',[]);
+angular.module('LoginAlumno',['ngRoute']);

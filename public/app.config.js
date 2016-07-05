@@ -7,6 +7,9 @@ angular.
         when('/login', {
           template: '<login-form></login-form>'
         }).
+        when('/avisos/', {
+          template: '<avisos></avisos>'
+        }).
         when('/notas/', {
           template: '<notas></notas>'
         }).
