@@ -5,6 +5,7 @@ angular.module('siga', [
   'NotasAlumno',
   'LoginAlumno',
   'AvisosAlumno',
+  'core',
   'Pie',
   'ngRoute'
 ]);

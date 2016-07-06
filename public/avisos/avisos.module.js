@@ -2,4 +2,4 @@
 
 
 // Define the `phoneDetail` module
-angular.module('AvisosAlumno',['ngRoute']);
+angular.module('AvisosAlumno',['ngRoute','core.avisos']);
